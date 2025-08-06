@@ -1,0 +1,57 @@
+/* Futuristic Global Styles */
+:root {
+  --background: linear-gradient(135deg, #0a0a0a 0%, #23234a 100%);
+  --foreground: #ededed;
+  --card-bg: rgba(30, 30, 60, 0.85);
+  --accent: #00ffe7;
+  --shadow: 0 8px 32px 0 rgba(0,255,231,0.18);
+  --border-glow: 0 0 12px 2px #00ffe7;
+  --radius: 24px;
+  --font-main: 'Segoe UI', 'Arial', sans-serif;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: linear-gradient(135deg, #0a0a0a 0%, #23234a 100%);
+    --foreground: #ededed;
+  }
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: var(--font-main);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Futuristic Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: rgba(0,255,231,0.05);
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, #00ffe7 0%, #23234a 100%);
+  border-radius: 4px;
+  box-shadow: 0 0 8px #00ffe7;
+}
