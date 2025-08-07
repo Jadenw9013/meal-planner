@@ -45,8 +45,8 @@ export default async function handler(
   let calMin = bmr, calMax = bmr
 
   if (goal === 'cut') {
-    calMin = bmr - 350
-    calMax = bmr - 200
+    calMin = bmr - 500
+    calMax = bmr - 350
   } else if (goal === 'bulk') {
     calMin = bmr + 200
     calMax = bmr + 500
