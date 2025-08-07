@@ -55,9 +55,11 @@ export default async function handler(
   const calorieRangeText =
     `\nThe total calories for the meal plan must be between ${Math.round(calMin)} and ${Math.round(calMax)} kcal.`
 
+  const weightLbs = weight * 2.20462; // weight is in kg
+
   const userPrompt =
     basePrompt +
-    `\nUser stats: Age ${age} yrs, Height ${height} cm, Weight ${weight} kg, Body fat ${bodyFat}%, BMR ${bmr.toFixed(0)} kcal/day, Goal: ${goal}, Allergies: ${allergies || 'none'}.` +
+    `\nUser stats: Age ${age} yrs, Height ${height} cm, Weight ${weight} kg (${weightLbs.toFixed(0)} lbs), Body fat ${bodyFat}%, BMR ${bmr.toFixed(0)} kcal/day, Goal: ${goal}, Allergies: ${allergies || 'none'}.` +
     calorieRangeText
 
   try {
