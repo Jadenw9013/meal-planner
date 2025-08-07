@@ -251,11 +251,6 @@ a.secondary {
   box-shadow: var(--border-glow);
 }
 
-/* Global select focus */
-select:focus {
-  border-color: var(--accent);
-  box-shadow: var(--border-glow);
-}
 
 .button {
   width: 100%;
