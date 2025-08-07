@@ -92,7 +92,7 @@ export default function Home() {
   return (
     <div className={styles.container}>
       <div className={styles.card} aria-busy={loading}>
-        <div className={styles.title}>Macro Maker</div>
+        <div className={styles.title}>Chef Jaden</div>
         <form onSubmit={handleSubmit} className={styles.form}>
           <div className={styles.formGroup}>
             <label className={styles.label}>Gender:</label>
