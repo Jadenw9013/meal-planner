@@ -176,20 +176,37 @@ a.secondary {
   padding: 48px 16px;
 }
 
+.container {
+  min-height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--background);
+  padding: 0;
+}
+
 .card {
   background: var(--card-bg);
   border-radius: var(--radius);
   box-shadow: var(--shadow);
-  backdrop-filter: blur(16px);
+  backdrop-filter: blur(18px);
   border: 2px solid var(--accent);
-  padding: 40px 32px;
+  padding: 40px 32px 32px 32px;
   width: 100%;
   max-width: 420px;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: stretch;
   transition: box-shadow 0.3s;
   position: relative;
+  margin: 24px 0;
+  animation: fadeIn 0.7s cubic-bezier(.4,2,.6,1) 1;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(40px);}
+  to   { opacity: 1; transform: none;}
 }
 
 .title {
@@ -199,25 +216,22 @@ a.secondary {
   color: var(--accent);
   text-shadow: 0 0 16px var(--accent);
   margin-bottom: 18px;
+  text-align: center;
 }
 
 .form {
   width: 100%;
 }
 
-.inputGroup {
+.formGroup {
   margin-bottom: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
 }
 
-.label {
-  display: block;
-  margin-bottom: 0.25rem;
-  color: var(--accent);
-  font-weight: 600;
-  letter-spacing: 0.03em;
-}
-
-.input {
+.input,
+:global(select) {
   width: 100%;
   padding: 0.85rem 1rem;
   border: 2px solid var(--accent);
@@ -228,9 +242,10 @@ a.secondary {
   outline: none;
   transition: border-color 0.2s, box-shadow 0.2s;
   font-family: var(--font-main);
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.2rem;
 }
-.input:focus {
+.input:focus,
+:global(select:focus) {
   border-color: var(--accent);
   box-shadow: var(--border-glow);
 }
@@ -261,7 +276,7 @@ a.secondary {
   color: var(--foreground);
 }
 
-.mealPlan {
+.result {
   margin-top: 2rem;
   width: 100%;
   background: rgba(0,255,231,0.08);
@@ -269,26 +284,36 @@ a.secondary {
   box-shadow: var(--border-glow);
   padding: 1.2rem;
   color: var(--foreground);
+  animation: fadeIn 0.7s cubic-bezier(.4,2,.6,1) 1;
 }
 
-.mealPlan h2 {
+.result h2 {
   color: var(--accent);
   font-size: 1.3rem;
   margin-bottom: 0.5rem;
   text-shadow: 0 0 8px var(--accent);
 }
 
-.mealPlan ul {
+.result ul {
   margin-bottom: 1rem;
   padding-left: 1.2rem;
 }
 
-.mealPlan li {
+.result li {
   margin-bottom: 0.5rem;
   font-size: 1.08rem;
 }
 
-.mealPlan p {
+.result p {
   margin: 0.5rem 0;
   font-size: 1.08rem;
+  color: var(--foreground);
+}
+
+/* Responsive for mobile */
+@media (max-width: 600px) {
+  .card {
+    padding: 24px 8px 16px 8px;
+    max-width: 98vw;
+  }
 }
